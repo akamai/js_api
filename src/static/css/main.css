@@ -1,0 +1,145 @@
+#content {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top:30px;
+}
+
+.metadatabutton {
+width: 100%
+display: flex;
+justify-content: start
+
+}
+
+#modelinput {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+
+}
+
+.button{
+position:relative!important;
+float:left!important;
+left:0!important;
+top:0!important;
+}
+.header{
+border-bottom:1px solid gray;
+padding-bottom:30px;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-check{
+margin-bottom:20px;
+
+}
+
+.inside-content{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top:20px;
+
+}
+
+footer {
+  display: flex;
+}
+
+
+img {
+    border-radius: 4px;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    position: absolute;
+    left:0;
+}
+
+.parent {
+  font-weight: bold;
+  background-color: darkgray;
+
+}
+
+
+div#loading {
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: url(/static/akamai.png) no-repeat;
+    cursor: wait;
+    }
+
+.load {
+  color: #DC143C;
+}
+
+.myImage {
+  float: left;
+  padding-top: 100px
+}
+.heading {
+  float:center;
+}
+
+.button {
+  display: inline-block;
+  padding: 3px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: steelblue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  float: right;
+  position: inherit;
+  left: 100px;
+  top: 150px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.dropdown-menu {
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.float-parent-element {
+    width: 30%;
+}
+.float-child-element {
+    float: left;
+    width: 50%;
+}
+.footer-right {
+    margin-left: 50%;
+    height: 100px;
+    color:purple;
+     padding-top: 100px;
+    padding-right: 80px;
+font-size: 20px;
+font-family: Marker Felt, fantasy
+}
+
+.resultsguidelines{
+font-style: italic;
+    position: relative;
+    left: 50px
+}

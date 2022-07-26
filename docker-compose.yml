@@ -1,0 +1,14 @@
+version: "3"
+services:
+  js_api:
+    build: .
+    ports:
+      - "8080:8080"
+    working_dir: /code
+    container_name: js_api
+    image: js_api_image
+    command: "python wsgi.py"
+
+    #if you don't want to run jupyter notebook, you can run this below command to keep the container alive
+
+    #command: "tail -F anything" # just to keep it running

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prism.css') }}">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"/>
+
+    <title>JS API - {{ js }} </title>
+</head>
+<body>
+<img src="/static/blackhat.webp" class="rounded float-right" alt="">
+
+<div class="core">
+    <div class="header">
+        <h1 style="text-align:center">JS API<small class="text-muted">v1.2</small></h1>
+        <button class="button" onclick="window.location.href='/'">Test URL</button>
+
+    </div>
+</div>
+
+<!--/!\ For safety we added comment symbol around the JS code :)-->
+<div class="metadatabutton tohide">
+
+
+<button class="button" onclick="loadingvt(); window.location.href='/metadata/vt?domain={{domain_name}}&name={{ js }}&type={{_type}}';" style="background-color: darkred" >Scan with VT</button>
+<button class="button" onclick="loadingpublicwww(); window.location.href='/metadata/publicwww?domain={{domain_name}}&name={{ js }}&type={{_type}}';" style="background-color: rebeccapurple">Scan with PublicWWW</button>
+
+</div>
+
+<div style="font-style: italic;" class="resultsguidelines tohide">If you don't see the code, try to view the page source. Comment in the code may hide it
+
+</div>
+<br>
+<br>
+<br>
+<img class='load myImage' src="static/infinity.gif" alt="Loading" style="display: none;">
+<div class="font-weight-bold heading loadvt" style="display: none;"><h2>Loading...We are uploading the samples to VT and wait for the analysis at least 20 sec</h2></div>
+<div class="loadpublicwww font-weight-bold heading" style="display: none;"><h2>Loading...We sent the first 100 characters of the JS script to PublicWWW</h2></div>
+    <pre class="tohide">
+        <code class="language-javascript tohide">{{js_code}}</code>
+    </pre>
+<script type="text/javascript"
+        src="{{ url_for('static', filename='prism.js') }}"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+        function loadingvt(){
+            $(".loadvt").show();
+            $(".tohide").hide();
+        }
+        function loadingpublicwww(){
+            $(".loadpublicwww").show();
+            $(".tohide").hide();
+        }
+</script>
+
+</html>

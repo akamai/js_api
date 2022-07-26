@@ -1,0 +1,12 @@
+*.log
+logs
+*.md
+!README*.md
+README-secret.md
+history
+*.csv
+__pycache__
+coverage
+download
+__pycache__
+personal.txt

@@ -1,0 +1,13 @@
+flask
+sklearn
+pandas
+requests
+bs4
+tldextract
+pypublicwww
+urllib3
+pytest
+gunicorn
+jsbeautifier
+graphviz
+mock

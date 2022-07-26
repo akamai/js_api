@@ -1,0 +1,3 @@
+class ApiNotFound(Exception):
+    pass
+
