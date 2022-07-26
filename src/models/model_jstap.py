@@ -80,7 +80,7 @@ class ModelJstap(Model):
         Returns:
 
         """
-        logger.info('pdg_list', pdg_list)
+        logger.info(f'pdg_list {pdg_list}')
         args = dict()
         args['js_files'] = pdg_list
         args['model'] = [self.model_path]

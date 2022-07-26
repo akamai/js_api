@@ -19,7 +19,7 @@ LOG_FILE_NUMBER = 5
 
 # MODEL TRAINED
 
-MODEL_TRAINED = os.path.join(WORKING_DIR, 'ressources', 'model_trained_akamai')
+MODEL_TRAINED = os.path.join(WORKING_DIR, 'ressources', 'model_trained')
 
 # Credentials
 
@@ -53,5 +53,5 @@ TEST_FOLDER = os.path.join(WORKING_DIR, 'test')
 
 # METADATA
 
-VT_UPLOAD_MAX_TIME = 500
+VT_UPLOAD_MAX_TIME = 200
 SLEEP_STEP = 20

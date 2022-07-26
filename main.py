@@ -219,6 +219,10 @@ def test_and_render_results(_path, model, url, limit, api):
     model_object = UseCaseModel.get_model(model)()
     th = model_object.get_th()
     js_dict = model_object.get_js_dict(limit, _path)
+    if not js_dict:  # TODO: Sometimes, testing an URL does not work but manually yes...
+        urls_splitted = '\n'.join(return_paths_downloaded(_path))
+        return f"Error in testing {url}. You can maybe test each sample manually. Below the URLs that you can query<br/>" \
+               f"{urls_splitted}"
 
     domain_name = os.path.basename(_path)
     if api:
@@ -227,10 +231,23 @@ def test_and_render_results(_path, model, url, limit, api):
                            domain_name=domain_name)
 
 
+def return_paths_downloaded(_path):
+    js_urls = []
+    url = os.path.basename(_path)
+    for root, dirs, files in os.walk(_path, topdown=False):
+        if ('inline' in root) or ('links' in root):
+            for name in files:
+                _type = os.path.basename(root)
+                href = f"{flask.request.url}js?domain={url}&name={name}&type={_type}"
+                js_urls.append(f"<a href ={href}>{name} - {_type}</a>")
+
+    return js_urls
+
+
 if __name__ == '__main__':
     """
     For better performance run the file wsgi.py 
     """
     init_folder([conf.LOG_FOLDER, conf.HISTORY_RESULT])
     logger = init_logger(debug_mode=True)
-    application.run(host="0.0.0.0", port=4004, use_reloader=False, debug=False)
+    application.run(host="0.0.0.0", port=4005, use_reloader=False, debug=False)
